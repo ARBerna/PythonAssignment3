@@ -30,8 +30,12 @@ while isValidInput == False:
         isValidInput = True
     elif membership == 'None':
         discount = ticketPrice
+        isValidInput = True
     else:
         print("Invalid input try again.", end=" ")
         membership = input()
 
-print(f"Your discount is: {int(dinoMemberships[membership] * 100)}% and your ticket price is: {discount}")
+if membership == 'None':
+    print(f"You do not have a discount so your ticket price is 500.0")
+else:
+    print(f"Your discount is: {int(dinoMemberships[membership] * 100)}% and your ticket price is: {discount}")
